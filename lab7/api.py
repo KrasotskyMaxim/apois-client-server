@@ -72,7 +72,7 @@ def create(model, db):
     return {"message": f"{model} successful created!"}
 
 
-@route("/api/<model>/delete/", method="DELETE")
+@route("/api/<model>/delete/", method="POST")
 def delete(model, db):
     logging.info("read data by POST request for path /%s/delete/", model)
     data = request.json
@@ -83,7 +83,7 @@ def delete(model, db):
     return {"message": f"{model} successful deleted!"}
 
 
-@route("/api/<model>/edit/", method="PUT")
+@route("/api/<model>/edit/", method="POST")
 def edit(model, db):
     logging.info("read data by POST request for path /%s/edit/", model)
     data = request.json
